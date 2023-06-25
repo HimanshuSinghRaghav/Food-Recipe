@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import useGlobalContext from '../Context'
-
+import Cook from './cook.png'
 
 const Eye = () => {
   const {setSearchTerm ,fetchRandomMeal} = useGlobalContext() 
@@ -27,11 +27,12 @@ const Eye = () => {
 
   
   return (
-    <div className=' w-full '>
-     <nav className='bg-gray-800 text-indigo-50 font-serif  h-20 flex'>
-      <img className='w-10 h-10' src='boy.png'></img>
-     <a className=' ml-20 mt-5 hover:bg-gray-500 rounded-md w-20 h-10 text-center pt-2' href='#'>Home</a>
-     <a className=' mt-5 hover:bg-gray-500 rounded-md w-20 h-10 text-center pt-2'>About Me</a>
+    <div className=' w-full '> 
+     <nav className='bg-gray-800 text-indigo-50 font-serif  h-20 flex px-2'>
+      <img className='w-20 h-20' src={Cook} alt="FoodSu" />
+
+     <a className=' ml-20 mt-5 hover:bg-gray-500 rounded-md w-40 h-10 text-center pt-2' href='#'>Home</a><br/>
+     <a className=' mt-5 hover:bg-gray-500 rounded-md w-60 h-10 text-center pt-2'>About Me</a>
 
      <form className='flex ml-[675px] mt-7 ' onSubmit={handleSubmit}>
       <div className='bg-white flex rounded-md h-9 w-56 hover:border border-cyan'>

@@ -6,6 +6,7 @@ import { Favroites } from './My_Components/Favroites'
 import './App.css'
 import { Meals } from './My_Components/Meals'
 import Modal from './My_Components/Modal'
+import AboutMe from './My_Components/AboutMe'
 
 function App() {
   const [count, setCount ] = useState(0)
@@ -16,6 +17,7 @@ function App() {
     {favorites.length > 0 && <Favroites />}
     <Meals />
     {showModal===true && <Modal/>}
+    <AboutMe/>
     </>
   )
 }
