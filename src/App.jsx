@@ -1,6 +1,6 @@
 import useGlobalContext from './Context'
 import { useState } from 'react'
-import Eye from './My_Components/eye'
+import Eye from './My_Components/Eye'
 import { Favroites } from './My_Components/Favroites'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
