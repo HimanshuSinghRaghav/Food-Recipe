@@ -24,7 +24,7 @@ export const Meals = () => {
 
   return (
     <>
-    {favorites.length > 0 && <Favroites/>}  
+ 
     {showModal === true && <Modal/>}
     <section className='ml-48 '>
       <div className='grid grid-cols-3 gap-x-8 gap-y-8   pt-10 w-[1000px]  '>

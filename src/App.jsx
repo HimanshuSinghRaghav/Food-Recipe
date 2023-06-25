@@ -12,12 +12,11 @@ function App() {
 
 
   return (<>
-        <Eye />
     <Router>
-      <Routes>
-             
+        <Eye />
+      <Routes>             
           <Route exact path="/" element={<Meals />} />
-
+          <Route exact path="/aboutme" element={<AboutMe/>} />
       </Routes>
     </Router>
     </>

@@ -6,7 +6,7 @@ import { useAsyncError } from 'react-router-dom';
 const AppContext = React.createContext();
 
 
-const allMealUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=a';
+const allMealUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
 
@@ -45,8 +45,8 @@ const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
       setShowModal(true)
     }
     
-    const fetchRandomMeal = ()=>{
-      fetchMeal(randomMealUrl)
+    const fetchRandomMeal = async()=>{
+      await fetchMeal(randomMealUrl)
       
     }
 
@@ -71,12 +71,21 @@ const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
       fetchMeal(allMealUrl) 
   } , [])
 
-    useEffect(()=>{
-      if(!searchTerm) return
-        fetchMeal(`${allMealUrl}${searchTerm}`) 
-    } , [searchTerm])
+    // useEffect(()=>{
+    //   if(!searchTerm){
+    //    fetchMeal(`${allMealUrl}`)  
+    //     console.log("null")
+    //   }else{
+    //     console.log("notNumm")
+    //     fetchMeal(`${allMealUrl}${searchTerm}`)  
+    //   }
+    // } , [searchTerm])
 
-  return ( <AppContext.Provider value={{meals , loading , setSearchTerm , fetchRandomMeal , showModal , selectMeal , selectedMeal , closeModal , addToFavorites ,removeFromFavorite ,favorites}}>
+    const handleSearchFood = async(searchTerm)=>{
+      await fetchMeal(`${allMealUrl}${searchTerm}`)  
+    }
+
+  return ( <AppContext.Provider value={{meals , loading , setSearchTerm , fetchRandomMeal , showModal , selectMeal , selectedMeal , closeModal , addToFavorites ,removeFromFavorite ,favorites ,handleSearchFood}}>
     {children}
   </AppContext.Provider>
     
