@@ -1,6 +1,8 @@
 import React from 'react'
 import { BsHandThumbsUp } from 'react-icons/bs'
 import useGlobalContext from '../Context'
+import { Favroites } from './Favroites'
+import Modal from './Modal'
  
 export const Meals = () => {
   const { meals ,loading , selectMeal , addToFavorites} = useGlobalContext()
@@ -17,7 +19,13 @@ export const Meals = () => {
     </section>
   }
 
+
+  const { showModal, favorites } = useGlobalContext();
+
   return (
+    <>
+    {favorites.length > 0 && <Favroites/>}  
+    {showModal === true && <Modal/>}
     <section className='ml-48 '>
       <div className='grid grid-cols-3 gap-x-8 gap-y-8   pt-10 w-[1000px]  '>
         {meals.map((singleMeal) => {
@@ -42,5 +50,6 @@ export const Meals = () => {
 
       {/* <h4>hi it is done !</h4> */}
     </section>
+    </>
   )
 }
